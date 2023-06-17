@@ -13,7 +13,7 @@ The Pharmacy Management System is a Django-based web application that provides a
   ```
   3. Install the dependencies:
   ```bash
-  pip install -r requirements.txt
+  cd Pharmacy_Management_System && pip install -r requirements.txt
   ```
   4. Run the development server:
   ```bash
