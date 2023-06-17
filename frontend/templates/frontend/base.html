@@ -123,6 +123,37 @@
 									</li>
 								</ul>
 							</li>
+							{% else %}
+							<li class="nav-item dropdown">
+								<button
+									class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+									id="profile"
+									type="button"
+									aria-expanded="false"
+									data-bs-toggle="dropdown"
+									data-bs-display="static"
+								>
+									<i
+										class="bi bi-person-circle"
+										title="Light mode"
+									></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li>
+										<form action="{% url 'frontend:login_view' %}" method="get">
+											<button
+												type="submit"
+												class="dropdown-item"
+											>
+												<i
+													class="bi bi-arrow-right-circle-fill opacity-50 px-2"
+												></i>
+												login
+											</button>
+										</form>
+									</li>
+								</ul>
+							</li>
 							{% endif %}
 						</ul>
 					</div>
