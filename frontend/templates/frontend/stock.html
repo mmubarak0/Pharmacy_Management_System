@@ -1,0 +1,109 @@
+{% extends 'frontend/base.html' %} {% load static %} {% block stock %}
+<!-- Search area -->
+<div class="row mt-3">
+    <div class="col xbounceDown-1">
+        <div class="form-floating">
+            <input type="search" class="form-control border border-success text-secondary" id="floatSearch"
+                placeholder="search" incremental>
+            <label for="floatSearch">search</label>
+        </div>
+    </div>
+    <div class="col xbounceDown-2">
+        <div class="form-floating">
+            <select class="form-select bg-success-subtle border border-primary text-secondary" id="filterSelect"
+                aria-label="filters">
+                <option value="0">clear all filters</option>
+                <option value="brandName">first name</option>
+                <option value="genericList">last name</option>
+            </select>
+            <label for="filterSelect" class="text-success-emphasis">filters</label>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Table area -->
+<div class="row mt-3">
+    <div class="col">
+        <table class="table table-striped table-hover">
+            <!-- Caption -->
+            <caption class="text-center">
+                stock
+                <a class="float row bg-primary bg-gradient" id="addButton" data-bs-toggle="offcanvas"
+                    href="#offcanvasUpdate">
+                    <i class="bi bi-plus-lg align-self-center" aria-controls="offcanvasUpdate"></i>
+                </a>
+            </caption>
+            <!-- Head -->
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col" id="_id">#</th>
+                    <th scope="col" id="_brand_name">brand name</th>
+                    <th scope="col" id="_generic_name">generic name</th>
+                    <th scope="col" id="_price">price</th>
+                    <th scope="col" id="_quantity">quantity</th>
+                    <th scope="col" id="_expiry_date">expiry date</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <!-- Body -->
+            <tbody id="tBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<!-- every item should update Canavas Data canavas when his view button is clicked-->
+<div class="row">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdate"
+        aria-labelledby="offcanvasUpdateLabel">
+        <!-- Canavas Head -->
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-primary" id="offcanvasUpdateLabel">Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <!-- Canavas Body -->
+        <div class="offcanvas-body">
+            <div class="view-area">
+                {% comment %} was here {% endcomment %}
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <!-- When clicked remove disabled attribute from the above inputs -->
+                    <button type="submit" class="btn btn-outline-warning" id="editButton">edit</button>
+                </div>
+                <div class="col text-end">
+                    <!-- Delete or save the above information to the database -->
+                    <button type="submit" class="btn btn-outline-success" disabled
+                        id="saveButton">save</button>
+                    <button type="submit" class="btn btn-outline-danger" id="deleteButton">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Pagination should be included when the number of items presented in the page is fixed  -->
+<nav aria-label="Page navigation Update">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+<script src="{% static 'js/search.js' %}" type="module"></script>
+<script src="{% static 'js/stock.js' %}" type="module"></script>
+<script src="{% static 'js/manage.js' %}" type="module"></script>
+{% endblock stock %}

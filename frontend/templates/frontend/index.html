@@ -1,0 +1,63 @@
+{% extends 'frontend/base.html' %} {% load static %}  {% block index %}
+<div class="row mb-2 mt-2">
+	<div class="col p-5 bg-info bg-gradient">
+		<div class="row">
+			<h1 class="title text-center p-3">
+				<span id="text"></span><span id="cursor">|</span>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col col-7 text-white">
+				<p class="head-right">
+					<span class="pe-1 first-letter">L</span>orem ipsum dolor sit
+					amet consectetur adipisicing elit. Ullam, ratione, non illo
+					ea, ad tenetur porro ab a eveniet architecto vitae quae
+					voluptate harum doloremque aliquid quas dolorum possimus?
+					Maiores!
+				</p>
+			</div>
+			<div class="col col-5 text-white">
+				<h2 class="border-bottom border-3 w-75">
+					<span class="in-between-letters">H</span>ow
+					<span class="in-between-letters">i</span>t
+					<span class="in-between-letters">w</span>ork
+				</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Ullam, ratione, non illo ea, ad tenetur porro ab a eveniet
+					architecto vitae quae voluptate harum doloremque aliquid
+					quas dolorum possimus? Maiores!
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col clearfix">
+				<form action="{% url 'frontend:patient' %}" method="get">
+					<input type="text" name="tutorial" value="true" hidden />
+					<button
+						type="submit"
+						class="float-end btn btn-outline-dark"
+					>
+						see tutorial
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row mb-2 mt-2">
+	<div class="col p-5 bg-dark bg-gradient">
+		<h1 class="text-white-50 border-bottom border-4 w-50 pb-2">
+			Our Mission
+		</h1>
+		<p class="text-white">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+			ratione, non illo ea, ad tenetur porro ab a eveniet architecto vitae
+			quae voluptate harum doloremque aliquid quas dolorum possimus?
+			Maiores!
+		</p>
+	</div>
+</div>
+
+<script src="{% static 'js/blinking.js' %}"></script>
+{% endblock index %}

@@ -1,0 +1,24 @@
+{% extends 'frontend/base.html' %}
+
+{% block login %}
+<div class="shadow-lg mt-5 w-75 border login-card">
+    <div class="row p-lg-5 p-3 mt-3">
+        <div class="row">
+            <div class="row mb-2">
+                <h1 class="login-card-header">Login</h1>
+            </div>
+            <div class="row">
+                <form method="post" class="login-form">{% csrf_token %}
+                    {{ form.as_div }}
+                    <input type="submit" value="login" class="btn btn-lg btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row p-3 text-center fgpass">
+        <div class="col">
+            <a href="" class="forget-link">Forgot Password ?</a>
+        </div>
+    </div>
+</div>
+{% endblock login %}
